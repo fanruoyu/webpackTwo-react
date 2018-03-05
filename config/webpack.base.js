@@ -23,7 +23,7 @@ module.exports = function(env){
 				{
 					test:/\.jsx?$/,
 					use:["babel-loader"],
-					exclude:"/node_modules/"
+					exclude:"/node_modules/",
 				},
 				{ 
 					test: /\.(png|jpg|gif)$/, 
@@ -31,12 +31,12 @@ module.exports = function(env){
 					exclude: "/node_modules/" 
 				},
 				{ 
-					test: /\.scss$/, 
-					use: ["style-loader","css-loader?modules","postcss-loader","sass-loader"], 
+					test: /\.scss|\.css$/, 
+					use: ["style-loader","css-loader","postcss-loader","sass-loader"], 
 					exclude: ["/node_modules/",path.resolve(__dirname,"../static")]
 				},
 				{ 
-					test: /\.scss$/, 
+					test: /\.scss|\.css$/, 
 					use: ["style-loader","css-loader","postcss-loader","sass-loader"], 
 					include: [path.resolve(__dirname,"../static")]
 				},
